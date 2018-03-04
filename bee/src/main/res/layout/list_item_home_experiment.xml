@@ -1,0 +1,53 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/recycler_item_vertical_padding"
+    android:paddingBottom="@dimen/recycler_item_vertical_padding"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:id="@+id/crop_status"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/crop_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_text_margin"
+        android:textStyle="bold"
+        android:textSize="@dimen/primary_text_size"/>
+
+    <TextView
+        android:id="@+id/crop_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_text_margin"
+        android:textSize="@dimen/secondary_text_size"
+        android:layout_below="@+id/crop_title"/>
+
+    <TextView
+        android:id="@+id/crop_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_text_margin"
+        android:textSize="@dimen/secondary_text_size"
+        android:maxLines="2"
+        android:textColor="@color/aps_secondary_text"
+        android:layout_below="@+id/crop_owner"/>
+
+    <com.apisense.bee.ui.layout.SensorsLayout
+        android:id="@+id/sensors_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/crop_description">
+    </com.apisense.bee.ui.layout.SensorsLayout>
+
+</RelativeLayout>
