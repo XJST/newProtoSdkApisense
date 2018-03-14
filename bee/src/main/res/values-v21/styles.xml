@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Apisense.Light" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/aps_accent</item>
-        <item name="android:statusBarColor">@color/aps_primary_dark</item>
-        <item name="colorPrimary">@color/aps_primary_dark</item>
-        <item name="android:navigationBarColor">@color/aps_primary</item>
-    </style>
-</resources>
