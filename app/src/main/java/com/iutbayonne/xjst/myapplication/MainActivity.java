@@ -16,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
         sdk.getCropManager().installOrUpdate(cropIdentifier,  new SimpleAPSCallback<Crop>() {
             @Override
             public void onDone(Crop crop) {
+                super.onCreate(savedInstanceState);
                 // Crop Installed, ready to be started.
                 sdk.getCropManager().start(crop, new SimpleAPSCallback<Crop>() {
                     @Override
                     public void onDone(Crop crop) {
+                        super.onCreate(savedInstanceState);
                         // Crop finally started.
                     }
                 });
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             sdk.getSessionManager().applicationLogin(new SimpleAPSCallback<Void>() {
                 @Override
                 public void onDone(Void aVoid) {
+                    super.onCreate(savedInstanceState);
                     setContentView(R.layout.dans_le_ondone_activity);
                     installExperiment(); // You can now install the experiment.
                 }
