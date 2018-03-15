@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="accessibility_service_description">Enable Bee to monitor your foreground applications</string>
 </resources>
