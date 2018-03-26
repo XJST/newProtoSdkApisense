@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected APISENSE apisense;
     protected APISENSE.Sdk sdk;
-    protected String cropIdentifier = "a7cfa9f3-295a-486d-8d3f-45595b71ab74";
+    protected String cropIdentifier = "abglrkyDVZiQwj6JmRLK";
     protected String sdkKey = "0aa513d7-7b8c-4673-b928-2ee6aa67bfdf";
     private Activity source;
     private static final int REQUEST_PERMISSION_START_CROP = 1;
