@@ -3,5 +3,6 @@
     android:accessibilityEventTypes="typeWindowStateChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:accessibilityFlags="flagIncludeNotImportantViews"
+    android:description="@string/accessibility_service_description"
     />
-    <!-- android:description="@string/accessibility_service_description" -->
+
