@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.iutbayonne.xjst.myapplication"
-        minSdkVersion 26
+        minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -26,12 +26,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    compile 'io.apisense.sdk:apisense-android-sdk:1.11.0'
+    implementation 'io.apisense.sdk:apisense-android-sdk:1.11.0'
 
     // If you want to be able import more stings in APISENSE
-    compile 'io.apisense.sdk:stings-network:1.11.0'
-    compile 'io.apisense.sdk:stings-phone:1.11.0'
-    compile 'io.apisense.sdk:stings-environment:1.11.0'
-    compile 'io.apisense.sdk:stings-motion:1.11.0'
-    compile 'io.apisense.sdk:stings-visualization:1.11.0'
+    implementation 'io.apisense.sdk:stings-network:1.11.0'
+    implementation 'io.apisense.sdk:stings-phone:1.11.0'
+    implementation 'io.apisense.sdk:stings-environment:1.11.0'
+    implementation 'io.apisense.sdk:stings-motion:1.11.0'
+    implementation 'io.apisense.sdk:stings-visualization:1.11.0'
 }
