@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected APISENSE.Sdk sdk;
     protected String cropIdentifier = "abglrkyDVZiQwj6JmRLK";
     protected String sdkKey = "0aa513d7-7b8c-4673-b928-2ee6aa67bfdf";
-    private Activity source;
-    private static final int REQUEST_PERMISSION_START_CROP = 1;
 
     // Install and start the collect, using your accessKey if the access is private
     private void installExperiment() {
@@ -33,7 +31,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    private void start(Crop crop) {
+        Set<String> deniedPermissions = sdk.getCropManager().deniedPermissions(crop);
+        if (deniedPermissions.isEmpty()) {
+            sdk.getCropManager().start(crop, new SimpleAPSCallback<Crop>() {
+                @Override
+                public void onDone(Crop crop) {
+                    // Crop finally started.
+                }
+            });
+        } else {
+            // Request missing permissions before starting the crop
+            // We consider that the user will accept
+            ActivityCompat.requestPermissions(this, deniedPermissions.toString());
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,23 +81,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-    }
-    private void start(Crop crop) {
-        Set<String> deniedPermissions = sdk.getCropManager().deniedPermissions(crop);
-        if (deniedPermissions.isEmpty()) {
-            sdk.getCropManager().start(crop, new SimpleAPSCallback<Crop>() {
-                @Override
-                public void onDone(Crop crop) {
-                    // Crop finally started.
-                }
-            });
-        } else {
-            // Request missing permissions before starting the crop
-            ActivityCompat.requestPermissions(source,
-                    deniedPermissions.toArray(new String[deniedPermissions.size()]),
-                    REQUEST_PERMISSION_START_CROP
-            );
-        }
-    }
+    }1
 }
